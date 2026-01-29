@@ -2,7 +2,7 @@ provider "aws"{
     region = "us-west-2"
 }
 
-resource "aws_instace" "myinstance" { 
+resource "aws_instance" "myinstance" { 
     ami = "ami-055a9df0c8c9f681c"
     instance_type = "t3.micro"
     security_groups = [aws_security_group.webtraffic.id]    
@@ -35,9 +35,14 @@ resource "aws_security_group" "webtraffic" {
     egress {
         from_port = 0
         to_port =0 
-        protocol = "-1".    
+        protocol = "-1"   
         cidr_blocks = ["0.0.0.0/0"]
     }
-
+ 
+resource "aws_instace" "myinstance" { 
+    ami = "ami-055a9df0c8c9f681c"
+    instance_type = "t3.micro"
+    vpc_security_group_ids = [aws_security_group.webtraffic.id]    
+}
     
 }
