@@ -72,7 +72,7 @@ pipeline{
                 sh '''
                 cd iac-repo/07-project-01
 
-                aws s3 cp *.tfstate s3://itkannadigaru-terraform-zero-to-hero/VPC-project/
+                aws s3 cp *.tfstate s3://s3-bucket-vpc-terra/VPC-project/
                 '''
             }
 
