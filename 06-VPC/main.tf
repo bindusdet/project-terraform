@@ -14,9 +14,9 @@ resource "aws_subnet" "mysubnet" {
     cidr_block = "10.0.0.0/24"
     tags = {
         Name = "Terraform_vsb"
-    }
-
-    import {
+    }  
+}
+ import {
         to = aws_vpc.myvpc
         id =vpc-01bd533c3b994a777
     }
@@ -25,4 +25,3 @@ resource "aws_subnet" "mysubnet" {
         to = aws_subnet.mysubnet
         id =subnet-0621dc7f101578121
     }
-}
