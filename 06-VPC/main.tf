@@ -18,10 +18,10 @@ resource "aws_subnet" "mysubnet" {
 }
  import {
         to = aws_vpc.myvpc
-        id =vpc-01bd533c3b994a777
+        id = "vpc-01bd533c3b994a777"
     }
 
     import {
         to = aws_subnet.mysubnet
-        id =subnet-0621dc7f101578121
+        id = "subnet-0621dc7f101578121"
     }
