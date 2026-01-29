@@ -35,11 +35,17 @@ resource "aws_security_group" "webtraffic" {
         to_port =0 
         protocol = "-1"   
         cidr_blocks = ["0.0.0.0/0"]
-    }    
+    }  
+    tags = {
+        Name = "Terraform-security-gropu"
+    }   
 }
 
 resource "aws_instance" "myinstance" { 
     ami = "ami-055a9df0c8c9f681c"
     instance_type = "t3.micro"
-    vpc_security_group_ids = [aws_security_group.webtraffic.id]    
+    vpc_security_group_ids = [aws_security_group.webtraffic.id] 
+    tags = {
+        Name = "Terraform-ecs"
+    }   
 }
