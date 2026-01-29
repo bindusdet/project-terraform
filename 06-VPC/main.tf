@@ -15,4 +15,14 @@ resource "aws_subnet" "mysubnet" {
     tags = {
         Name = "Terraform_vsb"
     }
+
+    import {
+        to = aws_vpc.myvpc
+        id =vpc-01bd533c3b994a777
+    }
+
+    import {
+        to = aws_subnet.mysubnet
+        id =subnet-0621dc7f101578121
+    }
 }
